@@ -119,6 +119,24 @@ class _DatePickerState extends StatelessWidget/*<DatePicker>*/ {
     print(dateParse.year);
     print(previousYear);
 
+    /*String saveDate = '2020-04-16';
+    DateFormat format = new DateFormat("yyyy-MM-dd");
+    var dateParse2 = format.parse(saveDate);
+    print('dateParse2=>$dateParse2');
+
+    DateTime dateTime= dateParse2;
+    String savedMonth = dateTime.month.toString();
+    String savedYear = dateTime.year.toString();
+
+    print("savedList==$savedYear");
+    if('4'== savedMonth && '2020' == savedYear){
+      print('SAME');
+      //rogspSvedList.add(element);
+    }*/
+
+
+
+
     
     //monthyear.thismonth. = currentMonth ;
 

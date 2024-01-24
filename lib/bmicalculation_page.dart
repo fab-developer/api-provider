@@ -1,15 +1,14 @@
 
 
 import 'package:bmi/bmi.dart';
+import 'package:bmipackage/list_ui.dart';
 import 'package:bmipackage/provider.dart';
-import 'package:bmipackage/weather.dart';
+import 'package:bmipackage/screen/weather.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
 
 import 'date_picker.dart';
-import 'listprovider.dart';
-
 
 class BmiCalculationPage extends HookWidget {
 
@@ -131,30 +130,30 @@ class BmiCalculationPage extends HookWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.indigo,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            backgroundColor: Colors.indigo,
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.indigo,
-            icon: Icon(Icons.business),
-            label: 'Business',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.indigo,
-            icon: Icon(Icons.school),
-            label: 'School',
-          ),
-        ],
-        currentIndex: selectedIndex,
-        selectedItemColor: Colors.white,
-        onTap: onItemTapped,
-          //provider.onItemTapped(provider.selectedIndex),
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   backgroundColor: Colors.indigo,
+      //   items: const <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       backgroundColor: Colors.indigo,
+      //       icon: Icon(Icons.home),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       backgroundColor: Colors.indigo,
+      //       icon: Icon(Icons.business),
+      //       label: 'Business',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       backgroundColor: Colors.indigo,
+      //       icon: Icon(Icons.school),
+      //       label: 'School',
+      //     ),
+      //   ],
+      //   currentIndex: selectedIndex,
+      //   selectedItemColor: Colors.white,
+      //   onTap: onItemTapped,
+      //     //provider.onItemTapped(provider.selectedIndex),
+      // ),
       body: Consumer<SelectProvider>(
        builder: (context, showPop, _){
          return Container(
@@ -201,11 +200,11 @@ class BmiCalculationPage extends HookWidget {
                          foregroundColor: MaterialStateProperty.all<Color>(Colors.indigo),
                        ),
                        onPressed: () {
-                         //Navigator.push(context,MaterialPageRoute(builder: (context) => DatePicker()),);
+                         Navigator.push(context,MaterialPageRoute(builder: (context) => Weather()),);
                          showPop.setDisplay(true);
 
                        },
-                       child: Text('Download'),
+                       child: Text('Check Weather'),
                      )
                    ],
                  ),

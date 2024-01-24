@@ -15,23 +15,24 @@ class model_api_response {
 
   model_api_response(
       {this.coord,
-        this.weather,
-        this.base,
-        this.main,
-        this.visibility,
-        this.wind,
-        this.clouds,
-        this.dt,
-        this.sys,
-        this.timezone,
-        this.id,
-        this.name,
-        this.cod});
+      this.weather,
+      this.base,
+      this.main,
+      this.visibility,
+      this.wind,
+      this.clouds,
+      this.dt,
+      this.sys,
+      this.timezone,
+      this.id,
+      this.name,
+      this.cod});
 
   model_api_response.fromJson(Map<String, dynamic> json) {
     coord = json['coord'] != null ? new Coord.fromJson(json['coord']) : null;
     if (json['weather'] != null) {
-      weather = new List<Weather>();
+      //weather = new List<Weather>();
+      List weather = [];
       json['weather'].forEach((v) {
         weather.add(new Weather.fromJson(v));
       });
@@ -40,7 +41,8 @@ class model_api_response {
     main = json['main'] != null ? new Main.fromJson(json['main']) : null;
     visibility = json['visibility'];
     wind = json['wind'] != null ? new Wind.fromJson(json['wind']) : null;
-    clouds = json['clouds'] != null ? new Clouds.fromJson(json['clouds']) : null;
+    clouds =
+        json['clouds'] != null ? new Clouds.fromJson(json['clouds']) : null;
     dt = json['dt'];
     sys = json['sys'] != null ? new Sys.fromJson(json['sys']) : null;
     timezone = json['timezone'];
@@ -134,11 +136,11 @@ class Main {
 
   Main(
       {this.temp,
-        this.feelsLike,
-        this.tempMin,
-        this.tempMax,
-        this.pressure,
-        this.humidity});
+      this.feelsLike,
+      this.tempMin,
+      this.tempMax,
+      this.pressure,
+      this.humidity});
 
   Main.fromJson(Map<String, dynamic> json) {
     temp = json['temp'];
